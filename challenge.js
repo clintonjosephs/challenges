@@ -1,14 +1,21 @@
 class Stack {
+  constructor() {
+    this.stack = [];
+  }
+
   push(number) {
     // your code here
+    this.stack.push(number);
   }
   
   pop() {
     // your code here
+    this.stack.pop();
   }
   
   min() {
     // your code here
+    return Math.min(...this.stack)
   }
 }
 
