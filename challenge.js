@@ -1,15 +1,30 @@
 class Stack {
-  push(number) {
+
+  constructor() {
+    this.items = [];
+    this.minValue = null;
+    this.oldMin = null;
+  }
+
+  push = (number) => {
     // your code here
+    this.items.push(number);
+    if ( this.minValue === null || number < this.minValue ) {
+      this.oldMin = this.minValue;
+      this.minValue = number;
+    }
+    return this.items;
   }
   
-  pop() {
+  pop = () =>  {
     // your code here
+    if (this.items[this.items.length - 1] === this.minValue) {
+      this.minValue = this.oldMin;
+    }
+    return this.items.pop();
   }
   
-  min() {
-    // your code here
-  }
+  min = () => this.minValue;
 }
 
 const stack = new Stack()
